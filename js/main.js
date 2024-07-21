@@ -10,7 +10,7 @@ exit.onclick = function(){
 }
 
 document.addEventListener("click",function(e){
-    if(e.target != menu){
+    if(e.target != menu && e.target != links){
         links.classList.remove("show");
     }
 })
@@ -27,13 +27,6 @@ window.addEventListener("mousemove",function(e){
     coords.y = e.clientY;
 })
 
-window.addEventListener("mousedown", function(e) {
-    e.preventDefault();
-});
-
-window.addEventListener("mouseup", function(e) {
-    e.preventDefault();
-});
 
 
 function animateCircle(){
