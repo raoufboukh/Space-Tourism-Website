@@ -1,0 +1,716 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --main-color:rgb(208 214 249);
+    --second-color:rgb(70 70 70);
+    --main-transition:0.5s;
+}
+body{
+    font-family: "Barlow", sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+@media(min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+@media(min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+@media(min-width:1199px){
+    .container{
+        width: 1170px;
+    }
+}
+
+.container{
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    cursor: none;
+}
+p{
+    color: var(--main-color);
+}
+/* debut header */
+header{
+    position: absolute;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .links{
+    backdrop-filter: blur(50px);
+    flex-basis: 65%;
+    position: relative;
+}
+
+header .links::before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 330px;
+    background-color: rgb(60, 60, 60);
+    left: -10%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+header .links ul{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px 0px;
+}
+header img{
+    width: 40px;
+    height: 40px;
+    margin: 5px 0 0 40px;
+}
+header .links ul li{
+    color: white;
+    font-size: 13px;
+    position: relative;
+} 
+
+header .links ul img{
+    display: none;
+}
+.page::before{
+    content: '';
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translate(-50%,100%);
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+header img:nth-child(2){
+    display: none;
+}
+
+/* section */
+.landing{
+    background-image: url(../assets/home/background-home-desktop.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.landing .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.landing .container .info{
+    flex-basis: 30%;
+    color: white;
+}
+
+.landing .container .info h2,
+.landing .container .info h1{
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.landing .container .info h1{
+    font-size: 100px;
+    letter-spacing: 8px;
+    margin: 20px 0;
+}
+
+
+.landing .container .info:first-of-type p{
+    font-size: 14px;
+    color: rgb(140 140 140);
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.landing .container .info:last-of-type a{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    position: relative;
+}
+
+.landing .container .info:last-of-type a::before{
+    content: "";
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 0%;
+    height: 0%;
+    background-color: rgba(255, 255, 255, 0.43);
+    border-radius: 50%;
+    z-index: -1;
+    transition: var(--main-transition);
+}
+
+.landing .container .info:last-of-type a:hover::before{
+    width: 120%;
+    height: 120%;
+}
+
+/* second section */
+.destination{
+    background-image: url(../assets/destination/background-destination-desktop.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.h2{
+    color: #ffffff;
+    position: absolute;
+    top: 10%;
+    font-weight: normal;
+    transform: translate(20%,50%);
+    font-family: "barlow condensed";
+    font-size: 24px;
+}
+
+.h2 span{
+    color: var(--second-color);
+    margin-right: 5px;
+}
+.destination .container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    transform: translate(0%,50%);
+}
+
+.destination .container > div{
+    flex-basis: 37%;
+}
+
+.destination .container ul{
+    display: flex;
+    gap: 20px;
+    margin: 10px;
+}
+
+.destination .container h3{
+    font-size: 100px;
+    font-weight: normal;
+    font-family: cursive;
+}
+.destination .container .planetImg img{
+    width: 90%;
+}
+
+.destination .container ul li{
+    color: var(--main-color);
+}
+
+.destination .container ul li.selected{
+    color: white;
+    position: relative;
+}
+
+.destination .container ul li.selected::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.destination .container .information > p{
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.destination .container .information .time{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.destination .container .information .time::after{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--second-color);
+    width: 100%;
+    height: 2px;
+}
+.destination .container .information .time p{
+    flex-basis: 40%;
+    font-size: 15px;
+    padding: 5px;
+    line-height: 1.5;
+}
+
+.destination .container .information .time p span{
+    color: white;
+    font-family: cursive;
+    font-size: 16px;
+    display: block;
+}
+
+
+/* third section */
+.crew{
+    background-image: url(../assets/crew/background-crew-desktop.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.crew .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
+    transform: translate(0%,43%);
+}
+.crew .container > div{
+    flex-basis: 48%;
+}
+
+.crew .container .imgCrew img{
+    width: 60%;
+}
+
+.crew .container .info{
+    padding-left: 30px;
+    font-size: 14px;
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.crew .container .info > div{
+    flex-basis: 100%;
+}
+.crew .container .info ul{
+    display: flex;
+    gap: 20px;
+}
+
+.crew .container .info ul li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--second-color);
+}
+.crew .container .info ul li.select{
+    background-color: white;
+}
+.crew h4,
+.crew h3,
+.tech h4,
+.tech h3{
+    text-transform: uppercase;
+    font-weight: normal;
+    font-family: "barlow condensed";
+}
+
+.crew h4,
+.tech h4{
+    font-size: 35px;
+    color: var(--second-color);
+}
+
+.crew h3,
+.tech h3{
+    color: white;
+    font-size: 56px;
+}
+/* fourth section */
+.tech{
+    background-image: url(../assets/technology/background-technology-desktop.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.tech .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
+    transform: translate(0%,43%);
+}
+
+.tech .container .infTech{
+    display: flex;
+}
+
+.tech .container .infTech div:first-child{
+    flex-basis: 20%;
+}
+.tech .container .infTech div:nth-child(2){
+    flex-basis: 70%;
+}
+
+.tech .container .infTech ul li{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid white;
+    color: white;
+    margin: 40px 0;
+    line-height: 3.2;
+}
+.tech .container .infTech ul li.enable{
+    background-color: white;
+    color: black;
+}
+
+.tech .container .infTech p{
+    line-height: 1.8;
+    font-size: 14px;
+}
+.tech .container > div{
+    flex-basis: 50%;
+}
+.tech .container .techImg{
+    text-align: right;
+}
+.tech .container .techImg img.tab{
+    display: none;
+}
+
+.tech .container .techImg  img{
+    width: 80%;
+}
+.tech h3{
+    margin: 10px 0;
+}
+.tech h4 {
+    margin: 10px 0;
+}
+@media(max-width:992px){
+    .landing{
+        background-image: url(../assets/home/background-home-tablet.jpg);
+        height: 130vh;
+    }
+    .destination{
+        background-image:url(../assets/destination/background-destination-tablet.jpg);
+        height: 130vh;
+    }
+    .crew{
+        background-image: url(../assets/crew/background-crew-tablet.jpg);
+        height: 130vh;
+    }
+    .tech{
+        background-image: url(../assets/technology/background-technology-tablet.jpg);
+        height: 130vh;
+    }
+    header .links::before{
+        content: none;
+    }
+
+    header .links li span{
+        display: none;
+    }
+
+    .landing .container{
+        flex-wrap: wrap;
+        margin-top: 60px;
+        justify-content: center;
+        gap: 30px;
+        z-index: 0;
+    }
+
+    .landing .container .info{
+        flex-basis: 70%;
+        text-align: center;
+    }
+    .landing .container .info:last-of-type a{
+        margin: auto;
+    }
+
+    .destination .container{
+        flex-wrap: wrap;
+        transform: translate(0%,24%);
+    }
+    .destination .container > div{
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .destination .container .planetImg img{
+        width: 33%;
+    }
+    .destination .container ul{
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .crew .container{
+        height: 600px;
+        flex-wrap: wrap;
+        transform: translate(0%,28%);
+        justify-content: center;
+        gap: 12px;
+    }
+    .crew .container > div{
+        flex-basis: 80%;
+        text-align: center;
+    }
+    .crew .container .imgCrew img{
+        width: 36.2%;
+    }
+    .crew .container .info ul{
+        justify-content: center;
+    }
+    .crew .container .info{
+        padding-left: 0;
+    }
+    .tech .container{
+        flex-wrap: wrap;
+        height: 600px;
+        transform: translate(0%,25%);
+    }
+    .tech .container > div{
+        flex-basis: 100%;
+    }
+
+    .tech .container .techImg{
+        order: -1;
+    }
+    .tech .container .techImg img{
+        width: 100%;
+    }
+    .tech .container .techImg img.tab{
+        display: block;
+    }
+    .tech .container .techImg img.desk{
+        display: none;
+    }
+    .tech .container .infTech ul{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 10px 0;
+    }
+
+    .tech .container .infTech ul li{
+        margin: 0;
+    }
+    .tech .container .infTech{
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    .tech .container .infTech > div{
+        flex-basis: 100%;
+    }
+    .tech .container .infTech div:first-child{
+        flex-basis: 100%;
+    }
+    body{
+        cursor: default;
+    }
+    .circle{
+        display: none;
+    }
+    a,li{
+        cursor: pointer;
+    }
+}
+
+@media(max-width:599px){
+    .landing{
+        background-image: url(../assets/home/background-home-mobile.jpg);
+    }
+    .crew{
+        background-image: url(../assets/crew/background-crew-mobile.jpg);
+    }
+    .destination{
+        background-image: url(../assets/destination/background-destination-mobile.jpg);
+    }
+    .tech{
+        background-image: url(../assets/technology/background-technology-mobile.jpg);
+    }
+    header .links{
+        position: absolute;
+        right: 0;
+        width: 60%;
+        height: 120vh;
+        transform: translate(100%,-4.6%);
+        transition: transform var(--main-transition) ease-in-out;
+        top: -10%;
+        padding-top: 100px;
+        z-index: 99;
+        text-align: left;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+    header .links li span{
+        display: inline-block;
+    }
+    header .links.show{
+        transform: translate(0%,-4.6%);
+    }
+
+    header .links ul{
+        display: block;
+        text-align: left;
+    }
+    header .links.show img{
+        display: block;
+        z-index: 100;
+        cursor: pointer;
+        position: absolute;
+        top: 5%;
+        right: 10%;
+        width: 20px;
+        height: 20px;
+    }
+    .page::before{
+        left: 97%;
+        width: 4px;
+        height: 70%;
+        top: 50%;
+        transform: translate(0,-48%);
+    }
+    .show{
+        backdrop-filter: blur(20px);
+    }
+    header .links ul li{
+        padding: 15px;
+    }
+    
+    header .links{
+        text-align: center;
+        margin: 16px 0;
+        flex-basis: 30%;
+    }
+    .landing .container .info h1{
+        font-size: 75px;
+    }
+    .landing .container .info h2{
+        font-size: 20px;
+    }
+    header img{
+        margin: 10px 0 0 30px;
+    }
+    header img:nth-child(2){
+        display: block;
+        margin: 17px 15px 0 0;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+    .destination .container .information .time{
+        flex-wrap: wrap;
+    }
+    .destination .container .information .time > p{
+        flex-basis: 100%;
+    }
+    .h2{
+        left: 50%;
+        transform: translate(-50%,50%);
+        font-size: 22px;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .destination .container h3{
+        font-size: 70px;
+    }
+    .destination .container .information .time::after{
+        top: -30%;
+    }
+    .destination .container .planetImg{
+        margin: 15px 0;
+    }
+    .destination .container .planetImg img{
+        width: 40%;
+    }
+
+    .destination .container .information .time p span{
+        font-size: 18px;
+    }
+
+    .crew .container{
+        transform: translate(0%,23%);
+    }
+
+    .crew h4,
+    .tech h4{
+        font-size: 25px;
+    }
+    .crew h3,
+    .tech h3{
+        font-size: 30px;
+    }
+    .crew .container .imgCrew img{
+        width: 64.6%;
+    }
+    .tech .container {
+        height: fit-content;
+        transform: translate(0%,40%);
+    }
+    .tech .container .infTech ul li{
+        width: 30px;
+        height: 30px;
+        line-height: 1.7;
+    }
+    .container{
+        padding: 0;
+    }
+
+}
+@media(max-width:360px){
+    .page::before{
+        left: 96%;
+    }
+}
+
+
+.circle{
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background-color:black ;
+    border: 1px solid white;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
